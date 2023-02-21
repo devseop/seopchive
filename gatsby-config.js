@@ -12,7 +12,7 @@ module.exports = {
     title: `devseop`,
     description: `devseop blog`,
     author: `devseop`,
-    siteUrl: `https://my-website-link.com`,
+    siteUrl: `https://devseop.github.io`,
   },
   plugins: [
     {
@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://my-website-link.com',
+        siteUrl: 'https://devseop.github.io',
         stripQueryString: true,
       },
     },
