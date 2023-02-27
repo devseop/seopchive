@@ -5,37 +5,37 @@ interface PostContentProps {
   html: string;
 }
 
-const MarkdownRenderer = styled.div`
+const MarkdownRenderer = styled.article`
   // Renderer Style
   display: flex;
   flex-direction: column;
   width: 768px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 64px 0;
   word-break: break-all;
 
   // Markdown Style
-  line-height: 1.8;
-  font-size: 16px;
+  line-height: 1.5;
+  font-size: 17px;
   font-weight: 400;
 
   // Apply Padding Attribute to All Elements
   p {
-    padding: 3px 0;
+    padding: 0;
   }
 
   // Adjust Heading Element Style
   h1,
   h2,
   h3 {
-    font-weight: 800;
-    margin-bottom: 30px;
+    font-weight: 700;
+    margin-bottom: 16px;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   hr + h1,
@@ -45,11 +45,11 @@ const MarkdownRenderer = styled.div`
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   h2 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   h3 {
@@ -58,10 +58,12 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Quotation Element Style
   blockquote {
-    margin: 30px 0;
-    padding: 5px 15px;
-    border-left: 2px solid #000000;
-    font-weight: 800;
+    margin: 32px 0;
+    padding: 20px 32px 20px;
+    border-left: 4px solid #4263eb;
+    font-weight: 400;
+    background: rgba(34, 34, 34, 0.05);
+    line-height: 1.5;
   }
 
   // Adjust List Element Style
@@ -73,8 +75,8 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Horizontal Rule style
   hr {
-    border: 1px solid #000000;
-    margin: 100px 0;
+    border: 0.5px solid rgba(34, 34, 34, 0.5);
+    margin: 64px 0;
   }
 
   // Adjust Link Element Style
@@ -83,11 +85,40 @@ const MarkdownRenderer = styled.div`
     text-decoration: underline;
   }
 
+  // Adjust Talbe Style
+  table {
+    margin: 24px 0;
+    // padding: 12px 16px;
+    background-color: rgba(34, 34, 34, 0.05);
+    border: 0.5px solid rgba(34, 34, 34, 0.3);
+    font-size: 14px;
+    width: fit-content;
+    min-width: 40%;
+    max-width: 100%;
+    border-collapse: collapse;
+    box-sizing: inherit;
+  }
+
+  th {
+    padding: 8px;
+    border-bottom: 3px solid rgba(34, 34, 34, 0.3);
+  }
+
+  td {
+    padding: 8px;
+  }
+
+  table td + td,
+  table th + th {
+    border-left: 0.5px solid rgba(34, 34, 34, 0.3);
+  }
+
   // Adjust Code Style
   pre[class*='language-'] {
-    margin: 30px 0;
-    padding: 15px;
-    font-size: 15px;
+    margin: 16px 0;
+    padding: 16px 20px;
+    font-size: 14px;
+    border-radius: 10px;
 
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
@@ -98,6 +129,35 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  pre > code {
+    font-family: 'JetBrains Mono';
+
+    // Code Block Style
+    .token.function {
+      color: #b392f0;
+    }
+
+    .token.keyword,
+    .token.operator {
+      color: #f97583;
+    }
+
+    .token.string,
+    .token.constant,
+    .token.boolean,
+    .token.number {
+      color: #9ecbff;
+    }
+
+    .token.parameter {
+      color: #ffab70;
+    }
+
+    .token.literal-property.property {
+      color: #fff;
+    }
   }
 
   // Markdown Responsive Design
@@ -117,6 +177,11 @@ const MarkdownRenderer = styled.div`
 
     h3 {
       font-size: 17px;
+    }
+
+    h4 {
+      font-size: 17px;
+      font-weight: 500;
     }
 
     img {

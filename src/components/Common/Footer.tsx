@@ -1,25 +1,30 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 
 const FooterWrapper = styled.footer`
-  display: grid;
   place-items: center;
   margin-top: auto;
-  padding: 50px 0;
-  font-size: 15px;
+  padding: 44px 0;
+  font-size: 14px;
   text-align: center;
-  line-height: 1.5;
-
-  @media (max-width: 768px) {
-    font-size: 13px;
+  line-height: 1.45;
+  color: rgba(34, 34, 34, 0.4);
   }
 `;
 
 const Footer: FunctionComponent = () => {
   return (
     <FooterWrapper>
-      Thank You for Visiting My Blog, Have a Good Day 😆
-      <br />© 2021 Developer Seop, Powered By Gatsby.
+      Powered By
+      <Link
+        to="https://www.gatsbyjs.com/"
+        target="_blank"
+        style={{ paddingLeft: '4px', color: '#3680ff' }}
+      >
+        Gatsby
+      </Link>
+      <br />© younseop lee, All rights reserved
     </FooterWrapper>
   );
 };

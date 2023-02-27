@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useMemo } from 'react';
-import Introduction from 'components/Main/Introduction';
-import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
+import Navbar from 'components/Main/Navbar';
+// import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
 import PostList from 'components/Main/PostList';
 import Template from 'components/Common/Template';
 import { graphql } from 'gatsby';
@@ -51,32 +51,32 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
       ? 'All'
       : parsed.category;
 
-  const categoryList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: CategoryListProps['categoryList'],
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }: PostListItemType,
-        ) => {
-          categories.forEach((category) => {
-            if (list[category] === undefined) list[category] = 1;
-            else list[category]++;
-          });
+  // const categoryList = useMemo(
+  //   () =>
+  //     edges.reduce(
+  //       (
+  //         list: CategoryListProps['categoryList'],
+  //         {
+  //           node: {
+  //             frontmatter: { categories },
+  //           },
+  //         }: PostListItemType,
+  //       ) => {
+  //         categories.forEach((category) => {
+  //           if (list[category] === undefined) list[category] = 1;
+  //           else list[category]++;
+  //         });
 
-          list['All']++;
+  //         list['All']++;
 
-          return list;
-        },
-        // initialValue
-        { All: 0 },
-      ),
-    // dependency
-    [],
-  );
+  //         return list;
+  //       },
+  //       // initialValue
+  //       { All: 0 },
+  //     ),
+  //   // dependency
+  //   [],
+  // );
 
   return (
     <Template
@@ -85,11 +85,11 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
       url={siteUrl}
       image={publicURL}
     >
-      <Introduction profileImage={gatsbyImageData} />
-      <CategoryList
+      <Navbar blogLogoImage={gatsbyImageData} />
+      {/* <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
-      />
+      /> */}
       <PostList selectedCategory={selectedCategory} posts={edges} />
     </Template>
   );
@@ -129,9 +129,9 @@ export const getPostList = graphql`
         }
       }
     }
-    file(name: { eq: "profile-image" }) {
+    file(name: { eq: "logo" }) {
       childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
+        gatsbyImageData(width: 143, height: 32)
       }
       publicURL
     }
