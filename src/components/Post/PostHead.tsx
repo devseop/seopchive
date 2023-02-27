@@ -18,23 +18,37 @@ type PostHeadProps = PostHeadInfoProps & {
 };
 
 const PostHeadWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 400px;
+  // position: relative;
+  // width: 100%;
+  // height: 400px;
 
-  @media (max-width: 768px) {
-    height: 300px;
-  }
+  // @media (max-width: 768px) {
+  //   height: 300px;
+  // }
+  display: flex;
+  flex-direction: column;
 `;
 
-const BackgroundImage = styled((props: GatsbyImageProps) => (
-  <GatsbyImage {...props} style={{ position: 'absolute' }} />
-))`
-  z-index: -1;
-  width: 100%;
-  height: 400px;
+// const BackgroundImage = styled((props: GatsbyImageProps) => (
+//   <GatsbyImage {...props} style={{ position: 'absolute' }} />
+// ))`
+//   // z-index: -1;
+//   width: 100%;
+//   height: 400px;
+//   object-fit: cover;
+//   filter: brightness(0.25);
+
+//   @media (max-width: 768px) {
+//     height: 300px;
+//   }
+// `;
+
+const BackgroundImage = styled(GatsbyImage)`
+  width: 768px;
+  height: 350px;
   object-fit: cover;
-  filter: brightness(0.25);
+  margin: 80px auto 12px;
+  border-radius: 16px;
 
   @media (max-width: 768px) {
     height: 300px;

@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react'
-import { Global, css } from '@emotion/react'
+import React, { FunctionComponent } from 'react';
+import { Global, css } from '@emotion/react';
 
 const defaultStyle = css`
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css');
@@ -23,10 +23,10 @@ const defaultStyle = css`
     text-decoration: none;
     cursor: pointer;
   }
-`
+`;
 
 const GlobalStyle: FunctionComponent = () => {
-  return <Global styles={defaultStyle} />
-}
+  return <Global styles={defaultStyle} />;
+};
 
-export default GlobalStyle
+export default GlobalStyle;

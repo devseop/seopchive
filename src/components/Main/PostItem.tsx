@@ -6,79 +6,74 @@ import { PostFrontmatterType } from 'types/PostItem.types';
 
 type PostItemProps = PostFrontmatterType & { link: string };
 
-const PostItemWrapper = styled(Link)`
+const PostItemWrapper = styled.article`
   display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-  transition: 0.3s box-shadow;
+  // transition: 0.3s box-shadow;
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 `;
 
 const ThumbnailImage = styled(GatsbyImage)`
-  width: 100%;
-  height: 200px;
-  border-radius: 10px 10px 0 0;
+  width: 188px;
+  height: 188px;
+  border-radius: 16px;
 `;
 
 const PostItemContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  margin: auto;
+  padding-left: 40px;
 `;
 
 const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
-  margin-bottom: 3px;
+  margin-bottom: 16px;
   text-overflow: ellipsis;
   white-space: normal;
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
+  color: #222;
 `;
 
 const Date = styled.div`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  opacity: 0.7;
+  color: rgba(34, 34, 34, 0.4);
 `;
 
 const Category = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  margin: 10px -5px;
+  margin-bottom: 8px;
 `;
 
 const CategoryItem = styled.div`
-  margin: 2.5px 5px;
-  padding: 3px 5px;
-  border-radius: 3px;
-  background: black;
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  color: #f24822;
+  margin-right: 8px;
 `;
 
 const Summary = styled.div`
   display: -webkit-box;
   overflow: hidden;
-  margin-top: auto;
+  margin-bottom: 12px;
   text-overflow: ellipsis;
+  line-height: 1.4;
   white-space: normal;
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 16px;
-  opacity: 0.8;
+  font-size: 14px;
+  color: rgba(34, 34, 34, 0.7);
 `;
 
 const PostItem: FunctionComponent<PostItemProps> = ({
@@ -92,19 +87,21 @@ const PostItem: FunctionComponent<PostItemProps> = ({
   link,
 }) => {
   return (
-    <PostItemWrapper to={link}>
-      <ThumbnailImage image={gatsbyImageData} alt="포스트 이미지" />
-      <PostItemContent>
-        <Title>{title}</Title>
-        <Date>{date}</Date>
-        <Category>
-          {categories.map((category) => (
-            <CategoryItem key={category}>{category}</CategoryItem>
-          ))}
-        </Category>
-        <Summary>{summary}</Summary>
-      </PostItemContent>
-    </PostItemWrapper>
+    <Link to={link}>
+      <PostItemWrapper>
+        <ThumbnailImage image={gatsbyImageData} alt="포스트 이미지" />
+        <PostItemContent>
+          <Category>
+            {categories.map((category) => (
+              <CategoryItem key={category}>{category}</CategoryItem>
+            ))}
+          </Category>
+          <Title>{title}</Title>
+          <Summary>{summary}</Summary>
+          <Date>{date.slice(0, -1)}</Date>
+        </PostItemContent>
+      </PostItemWrapper>
+    </Link>
   );
 };
 

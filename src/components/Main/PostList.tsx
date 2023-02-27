@@ -12,12 +12,11 @@ type PostListType = {
 };
 
 const PostListWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   width: 768px;
-  margin: 0 auto;
-  padding: 50px 0 100px;
+  margin: 80px auto 0;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
