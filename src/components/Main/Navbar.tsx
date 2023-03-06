@@ -53,7 +53,7 @@ const Navbar: FunctionComponent<IntroductionProps> = ({ blogLogoImage }) => {
         {/* <ProfileImage profileImage={profileImage} /> */}
         <BlogLogoImage blogLogoImage={blogLogoImage} />
         <MenuWrapper>
-          <MenuLink to="/">Posts</MenuLink>
+          {/* <MenuLink to="/">Posts</MenuLink> */}
           {/* <MenuLink to="/resume">Resume</MenuLink> */}
           <MenuLink
             to="https://github.com/devseop/devseop.github.io"
