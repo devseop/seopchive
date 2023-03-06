@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from 'react';
+import React, { FunctionComponent } from 'react';
 import Navbar from 'components/Main/Navbar';
 // import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
 import PostList from 'components/Main/PostList';

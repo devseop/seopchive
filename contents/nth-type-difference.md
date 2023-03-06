@@ -1,8 +1,8 @@
 ---
 date: '2022-08-16'
 title: 'nth-child? nth-of-type?'
-categories: ['Front-End', 'Next.js', 'CSS']
-summary: '기업협업시 담당했던 프론트 서버 배포 과정에 대한 경험과 실패에 대한 회고입니다.'
+categories: ['Next.js', 'CSS']
+summary: 'Next.js 프로젝트의 CSS 스타일링 오류와 그에 대한 해결방법에 대해 알아봅니다.'
 thumbnail: './nth-of-type.png'
 ---
 

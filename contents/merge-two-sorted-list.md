@@ -2,7 +2,7 @@
 date: '2022-11-15'
 title: '단일 연결 리스트 합치기'
 categories: ['Algorithm']
-summary: '테오의 스프린트는 시니어 프론트엔드 개발자 테오(teo)가 진행하는 프로젝트로 참여자끼리 팀을 구성하여 구글의 스프린트를 체험해보는 과정에 대한 회고입니다.'
+summary: ''
 thumbnail: './algo1.png'
 ---
 

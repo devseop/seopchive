@@ -30,10 +30,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const GithubLink = styled(Link)`
+const MenuWrapper = styled.div`
+  display: flex;
+  gap: 24px;
+`;
+
+const MenuLink = styled(Link)`
   font-size: 16px;
   font-weight: 500;
   color: rgba(34, 34, 34, 0.8);
+  text-decoration: none;
 
   :hover {
     color: #f24822;
@@ -46,12 +52,16 @@ const Navbar: FunctionComponent<IntroductionProps> = ({ blogLogoImage }) => {
       <Wrapper>
         {/* <ProfileImage profileImage={profileImage} /> */}
         <BlogLogoImage blogLogoImage={blogLogoImage} />
-        <GithubLink
-          to="https://github.com/devseop/devseop.github.io"
-          target="_blank"
-        >
-          Github
-        </GithubLink>
+        <MenuWrapper>
+          <MenuLink to="/">Posts</MenuLink>
+          {/* <MenuLink to="/resume">Resume</MenuLink> */}
+          <MenuLink
+            to="https://github.com/devseop/devseop.github.io"
+            target="_blank"
+          >
+            Github
+          </MenuLink>
+        </MenuWrapper>
       </Wrapper>
     </Background>
   );

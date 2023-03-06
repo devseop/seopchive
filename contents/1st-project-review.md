@@ -1,7 +1,7 @@
 ---
 date: '2022-06-06'
 title: '[wecode] 1차 프로젝트 후기'
-categories: ['BootCamp', 'Review', 'Front-End', 'React', 'SCSS']
+categories: ['Wecode', 'BootCamp', 'Review']
 summary: '부트캠프 과정을 따라가면서 진행한 첫 개발 프로젝트의 후기입니다.'
 thumbnail: './1cha.png'
 ---

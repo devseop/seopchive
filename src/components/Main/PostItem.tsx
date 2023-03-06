@@ -17,8 +17,8 @@ const PostItemWrapper = styled.article`
 `;
 
 const ThumbnailImage = styled(GatsbyImage)`
-  width: 188px;
-  height: 188px;
+  width: 200px;
+  height: 200px;
   border-radius: 16px;
 `;
 
@@ -30,7 +30,7 @@ const PostItemContent = styled.div`
   padding-left: 40px;
 `;
 
-const Title = styled.div`
+const Title = styled.h2`
   display: -webkit-box;
   overflow: hidden;
   margin-bottom: 16px;
@@ -44,7 +44,7 @@ const Title = styled.div`
   color: #222;
 `;
 
-const Date = styled.div`
+const Date = styled.h6`
   font-size: 13px;
   font-weight: 400;
   color: rgba(34, 34, 34, 0.4);
@@ -55,14 +55,14 @@ const Category = styled.div`
   margin-bottom: 8px;
 `;
 
-const CategoryItem = styled.div`
+const CategoryItem = styled.h6`
   font-size: 13px;
   font-weight: 500;
   color: #f24822;
   margin-right: 8px;
 `;
 
-const Summary = styled.div`
+const Summary = styled.h5`
   display: -webkit-box;
   overflow: hidden;
   margin-bottom: 12px;
@@ -73,6 +73,7 @@ const Summary = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 14px;
+  font-weight: 400;
   color: rgba(34, 34, 34, 0.7);
 `;
 

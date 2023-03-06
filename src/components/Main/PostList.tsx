@@ -11,7 +11,7 @@ type PostListType = {
   posts: PostListItemType[];
 };
 
-const PostListWrapper = styled.div`
+const PostListWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 40px;
