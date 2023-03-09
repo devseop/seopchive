@@ -2,7 +2,7 @@
 date: '2022-11-15'
 title: '단일 연결 리스트 합치기'
 categories: ['Algorithm']
-summary: ''
+summary: '두 개의 정렬된 단일 연결 리스트를 하나의 단일 연결 리스트로 병합하는 알고리즘 문제입니다.'
 thumbnail: './algo1.png'
 ---
 

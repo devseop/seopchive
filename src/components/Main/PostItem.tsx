@@ -8,12 +8,12 @@ type PostItemProps = PostFrontmatterType & { link: string };
 
 const PostItemWrapper = styled.article`
   display: flex;
-  // transition: 0.3s box-shadow;
   cursor: pointer;
+  // transition: 0.3s box-shadow;
 
-  &:hover {
-    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
+  // &:hover {
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  // }
 `;
 
 const ThumbnailImage = styled(GatsbyImage)`
@@ -28,12 +28,13 @@ const PostItemContent = styled.div`
   flex-direction: column;
   margin: auto;
   padding-left: 40px;
+  gap: 16px;
 `;
 
 const Title = styled.h2`
   display: -webkit-box;
   overflow: hidden;
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
   text-overflow: ellipsis;
   white-space: normal;
   overflow-wrap: break-word;
@@ -45,34 +46,34 @@ const Title = styled.h2`
 `;
 
 const Date = styled.h6`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: rgba(34, 34, 34, 0.4);
 `;
 
-const Category = styled.div`
-  display: flex;
-  margin-bottom: 8px;
-`;
+// const Category = styled.div`
+//   display: flex;
+//   margin-bottom: 8px;
+// `;
 
-const CategoryItem = styled.h6`
-  font-size: 13px;
-  font-weight: 500;
-  color: #f24822;
-  margin-right: 8px;
-`;
+// const CategoryItem = styled.h6`
+//   font-size: 13px;
+//   font-weight: 500;
+//   color: #f24822;
+//   margin-right: 8px;
+// `;
 
 const Summary = styled.h5`
   display: -webkit-box;
   overflow: hidden;
-  margin-bottom: 12px;
+  // margin-bottom: 12px;
   text-overflow: ellipsis;
   line-height: 1.4;
   white-space: normal;
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: rgba(34, 34, 34, 0.7);
 `;
@@ -80,7 +81,7 @@ const Summary = styled.h5`
 const PostItem: FunctionComponent<PostItemProps> = ({
   title,
   date,
-  categories,
+  // categories,
   summary,
   thumbnail: {
     childImageSharp: { gatsbyImageData },
@@ -92,11 +93,11 @@ const PostItem: FunctionComponent<PostItemProps> = ({
       <PostItemWrapper>
         <ThumbnailImage image={gatsbyImageData} alt="포스트 이미지" />
         <PostItemContent>
-          <Category>
+          {/* <Category>
             {categories.map((category) => (
               <CategoryItem key={category}>{category}</CategoryItem>
             ))}
-          </Category>
+          </Category> */}
           <Title>{title}</Title>
           <Summary>{summary}</Summary>
           <Date>{date.slice(0, -1)}</Date>

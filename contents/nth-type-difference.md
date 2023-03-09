@@ -2,7 +2,7 @@
 date: '2022-08-16'
 title: 'nth-child? nth-of-type?'
 categories: ['Next.js', 'CSS']
-summary: 'Next.js 프로젝트의 CSS 스타일링 오류와 그에 대한 해결방법에 대해 알아봅니다.'
+summary: 'Next.js 프로젝트의 CSS 스타일링 오류와 원인에 대해 알아봅니다.'
 thumbnail: './nth-of-type.png'
 ---
 
