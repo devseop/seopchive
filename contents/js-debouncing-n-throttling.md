@@ -2,7 +2,7 @@
 date: '2023-03-07'
 title: 'JavaScript에서 이벤트 제어하기: Debouncing & Throttling'
 categories: ['JavaScript', 'Event']
-summary: 'React & TypeScript 프로젝트에서 useRef를 사용하는 방법에서 대해 알아봅니다.'
+summary: '이벤트 제어를 위한 최적화 방법, Debouncing과 Throttling에 대해 알아봤습니다.'
 thumbnail: './debounce.png'
 ---
 
