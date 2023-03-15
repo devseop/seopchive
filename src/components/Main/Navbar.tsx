@@ -33,6 +33,8 @@ const Wrapper = styled.div`
 const MenuWrapper = styled.div`
   display: flex;
   gap: 24px;
+  height: 32px;
+  align-items: center;
 `;
 
 const MenuLink = styled(Link)`
@@ -40,9 +42,11 @@ const MenuLink = styled(Link)`
   font-weight: 500;
   color: rgba(34, 34, 34, 0.8);
   text-decoration: none;
+  height: fit-content;
 
   :hover {
-    color: #f24822;
+    color: rgba(34, 34, 34, 0.8);
+    box-shadow: 0 1.5px 0 0 rgba(34, 34, 34, 0.8);
   }
 `;
 

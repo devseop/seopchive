@@ -26,9 +26,9 @@ const PostItemContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  padding-left: 40px;
   gap: 16px;
+  margin: auto;
+  // padding-left: 40px;
 `;
 
 const Title = styled.h2`
@@ -51,17 +51,24 @@ const Date = styled.h6`
   color: rgba(34, 34, 34, 0.4);
 `;
 
-// const Category = styled.div`
-//   display: flex;
-//   margin-bottom: 8px;
-// `;
+const Category = styled.div`
+  display: flex;
+  // margin-bottom: 8px;
+`;
 
-// const CategoryItem = styled.h6`
-//   font-size: 13px;
-//   font-weight: 500;
-//   color: #f24822;
-//   margin-right: 8px;
-// `;
+const CategoryItem = styled.h6`
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: 1px solid rgba(34, 34, 34, 0.8);
+  border-radius: 16px;
+
+  &:nth-of-type(1) {
+    color: #fff;
+    background-color: rgba(34, 34, 34, 1);
+  }
+`;
 
 const Summary = styled.h5`
   display: -webkit-box;
@@ -81,24 +88,28 @@ const Summary = styled.h5`
 const PostItem: FunctionComponent<PostItemProps> = ({
   title,
   date,
-  // categories,
+  categories,
   summary,
-  thumbnail: {
-    childImageSharp: { gatsbyImageData },
-  },
+  // thumbnail: {
+  //   childImageSharp: { gatsbyImageData },
+  // },
   link,
 }) => {
   return (
     <Link to={link}>
       <PostItemWrapper>
-        <ThumbnailImage image={gatsbyImageData} alt="포스트 이미지" />
+        {/* <ThumbnailImage image={gatsbyImageData} alt="포스트 이미지" /> */}
         <PostItemContent>
-          {/* <Category>
-            {categories.map((category) => (
-              <CategoryItem key={category}>{category}</CategoryItem>
-            ))}
-          </Category> */}
-          <Title>{title}</Title>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
+          >
+            <Category>
+              {categories.map((category) => (
+                <CategoryItem key={category}>{category}</CategoryItem>
+              ))}
+            </Category>
+            <Title>{title}</Title>
+          </div>
           <Summary>{summary}</Summary>
           <Date>{date.slice(0, -1)}</Date>
         </PostItemContent>

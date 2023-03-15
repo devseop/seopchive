@@ -77,11 +77,22 @@ const Title = styled.div`
 
 const CategoryWrapper = styled.div`
   display: flex;
-  margin: 24px 0 8px;
-  color: #f24822;
-  font-size: 13px;
+  margin: 24px 0 12px;
+`;
+
+const CategoryItem = styled.h6`
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1;
-  font-weight: 500;
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: 1px solid rgba(34, 34, 34, 0.8);
+  border-radius: 16px;
+
+  &:nth-of-type(1) {
+    color: #fff;
+    background-color: rgba(34, 34, 34, 1);
+  }
 `;
 
 const PostDate = styled.p`
@@ -100,7 +111,12 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = ({
       {/* <PrevPageIcon onClick={goBackPage}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </PrevPageIcon> */}
-      <CategoryWrapper>{categories.join(' | ')}</CategoryWrapper>
+      {/* <CategoryWrapper>{categories.join(' | ')}</CategoryWrapper> */}
+      <CategoryWrapper>
+        {categories.map((category) => (
+          <CategoryItem key={category}>{category}</CategoryItem>
+        ))}
+      </CategoryWrapper>
       <Title>{title}</Title>
       <PostDate>{date}</PostDate>
     </PostHeadInfoWrapper>
