@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
@@ -12,11 +12,7 @@ const BlogLogoWapper = styled(GatsbyImage)`
 `;
 
 const BlogLogoImage: FunctionComponent<BlogLogoProps> = ({ blogLogoImage }) => {
-  return (
-    <Link to="/">
-      <BlogLogoWapper image={blogLogoImage} alt="devseop" />
-    </Link>
-  );
+  return <BlogLogoWapper image={blogLogoImage} alt="devseop" />;
 };
 
 export default BlogLogoImage;

@@ -11,9 +11,9 @@ const PostItemWrapper = styled.article`
   cursor: pointer;
   // transition: 0.3s box-shadow;
 
-  // &:hover {
-  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  // }
+  /* &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  } */
 `;
 
 const ThumbnailImage = styled(GatsbyImage)`

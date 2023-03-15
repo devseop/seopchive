@@ -131,7 +131,7 @@ export const getPostList = graphql`
     }
     file(name: { eq: "logo" }) {
       childImageSharp {
-        gatsbyImageData(width: 143, height: 32)
+        gatsbyImageData(width: 32, height: 32)
       }
       publicURL
     }

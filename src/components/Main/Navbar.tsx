@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
-// import ProfileImage from '../Main/ProfileImage';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import BlogLogoImage from './BlogLogoImage';
 import { Link } from 'gatsby';
@@ -30,6 +29,16 @@ const Wrapper = styled.div`
   }
 `;
 
+const WordMark = styled.span`
+  color: rgba(34, 34, 34, 1);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-left: 10px;
+  margin-top: -2px;
+`;
+
 const MenuWrapper = styled.div`
   display: flex;
   gap: 24px;
@@ -55,14 +64,16 @@ const Navbar: FunctionComponent<IntroductionProps> = ({ blogLogoImage }) => {
     <Background>
       <Wrapper>
         {/* <ProfileImage profileImage={profileImage} /> */}
-        <BlogLogoImage blogLogoImage={blogLogoImage} />
+        <Link to="/">
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <BlogLogoImage blogLogoImage={blogLogoImage} />
+            <WordMark>devseop</WordMark>
+          </div>
+        </Link>
         <MenuWrapper>
           {/* <MenuLink to="/">Posts</MenuLink> */}
           {/* <MenuLink to="/resume">Resume</MenuLink> */}
-          <MenuLink
-            to="https://github.com/devseop/devseop.github.io"
-            target="_blank"
-          >
+          <MenuLink to="https://github.com/devseop/" target="_blank">
             Github
           </MenuLink>
         </MenuWrapper>
