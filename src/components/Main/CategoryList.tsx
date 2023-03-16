@@ -45,10 +45,6 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   &:last-of-type {
     margin-right: 0;
   }
-
-  @media (max-width: 768px) {
-    font-size: 15px;
-  }
 `;
 
 const CategoryList: FunctionComponent<CategoryListProps> = ({
@@ -66,7 +62,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = ({
           active={name === selectedCategory}
           key={name}
         >
-          #{name}({count})
+          {name}({count})
         </CategoryItem>
       ))}
     </CategoryListWrapper>
