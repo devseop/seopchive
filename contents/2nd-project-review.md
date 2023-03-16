@@ -1,7 +1,7 @@
 ---
 date: '2022-06-22'
 title: '[wecode] 2차 프로젝트 후기'
-categories: ['Wecode', 'BootCamp', 'Review']
+categories: ['Review', 'BootCamp']
 summary: '1차 프로젝트의 경험을 바탕으로 더 나은 프로젝트를 진행하기 위해 많은 고민을 했던 2차 프로젝트의 후기입니다.'
 thumbnail: './2cha.png'
 ---
