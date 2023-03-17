@@ -5,12 +5,11 @@ import { Link } from 'gatsby';
 const FooterWrapper = styled.footer`
   place-items: center;
   margin-top: auto;
-  padding: 44px 0;
+  padding: 80px 0 48px;
   font-size: 14px;
   text-align: center;
   line-height: 1.45;
   color: rgba(34, 34, 34, 0.4);
-  }
 `;
 
 const Footer: FunctionComponent = () => {

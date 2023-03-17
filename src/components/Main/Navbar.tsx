@@ -1,33 +1,45 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
-import BlogLogoImage from './BlogLogoImage';
+// import { IGatsbyImageData } from 'gatsby-plugin-image';
+// import BlogLogoImage from './BlogLogoImage';
 import { Link } from 'gatsby';
 
-export type IntroductionProps = {
-  // profileImage?: IGatsbyImageData;
-  blogLogoImage: IGatsbyImageData;
-};
+// export type IntroductionProps = {
+//   // profileImage?: IGatsbyImageData;
+//   blogLogoImage: IGatsbyImageData;
+// };
 
 const Background = styled.header`
   width: 100%;
-  color: #ffffff;
+  position: fixed;
+  z-index: 100;
+  border-bottom: 0.5px solid rgba(34, 34, 34, 0.2);
 `;
 
-const Wrapper = styled.div`
+const NavbarWrapper = styled.div`
+  max-width: 768px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  width: 768px;
-  margin: 16px auto;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 300px;
-    padding: 0 20px;
-  }
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 16px 0;
+  background-color: #fff;
 `;
+
+// const Wrapper = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 768px;
+//   margin: 16px auto;
+
+//   @media (max-width: 768px) {
+//     width: 100%;
+//     height: 300px;
+//     padding: 0 20px;
+//   }
+// `;
 
 const WordMark = styled.span`
   color: rgba(34, 34, 34, 1);
@@ -35,8 +47,8 @@ const WordMark = styled.span`
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.5px;
-  margin-left: 10px;
-  margin-top: -2px;
+  /* margin-left: 10px;
+  margin-top: -2px; */
 `;
 
 const MenuWrapper = styled.div`
@@ -59,16 +71,12 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const Navbar: FunctionComponent<IntroductionProps> = ({ blogLogoImage }) => {
+const Navbar = () => {
   return (
     <Background>
-      <Wrapper>
-        {/* <ProfileImage profileImage={profileImage} /> */}
+      <NavbarWrapper>
         <Link to="/">
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <BlogLogoImage blogLogoImage={blogLogoImage} />
-            <WordMark>devseop</WordMark>
-          </div>
+          <WordMark>dev.seop</WordMark>
         </Link>
         <MenuWrapper>
           {/* <MenuLink to="/">Posts</MenuLink> */}
@@ -77,7 +85,7 @@ const Navbar: FunctionComponent<IntroductionProps> = ({ blogLogoImage }) => {
             Github
           </MenuLink>
         </MenuWrapper>
-      </Wrapper>
+      </NavbarWrapper>
     </Background>
   );
 };

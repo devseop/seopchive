@@ -47,7 +47,7 @@ const BackgroundImage = styled(GatsbyImage)`
   width: 768px;
   height: 350px;
   object-fit: cover;
-  margin: 80px auto 12px;
+  margin: 120px auto 12px;
   border-radius: 16px;
 
   @media (max-width: 768px) {

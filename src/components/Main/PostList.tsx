@@ -16,7 +16,7 @@ const PostListWrapper = styled.section`
   flex-direction: column;
   gap: 40px;
   width: 768px;
-  margin: 80px auto 0;
+  margin: 120px auto 0;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

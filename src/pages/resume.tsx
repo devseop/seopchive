@@ -5,22 +5,35 @@ import { Global, css } from '@emotion/react';
 import Navbar from 'components/Main/Navbar';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import ResumeTemplate from 'components/Resume/resume_template';
+import Template from 'components/Common/Template';
 
-const globalStyle = css`
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Pretendard', san-serif;
-  }
-`;
+type ResumePageProps = {
+  location: {
+    search: string;
+  };
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+        siteUrl: string;
+      };
+    };
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+      publicURL: string;
+    };
+  };
+};
 
 const ResumeWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 768px;
-  margin: 80px auto 0;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -36,20 +49,15 @@ const HeadLine = styled.h2`
   line-height: 1.3;
 `;
 
-type ResumePageProps = {
-  data: {
-    file: {
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData;
-      };
-    };
-  };
-};
-
 const ResumePage: FunctionComponent<ResumePageProps> = ({
+  location: { search },
   data: {
+    site: {
+      siteMetadata: { title, description, siteUrl },
+    },
     file: {
       childImageSharp: { gatsbyImageData },
+      publicURL,
     },
   },
 }) => {
@@ -57,24 +65,37 @@ const ResumePage: FunctionComponent<ResumePageProps> = ({
     '안녕하세요,\n동적인 것을 좋아하는\n정적인 프론트엔드 엔지니어\n이윤섭입니다.';
 
   return (
-    <div>
-      <Global styles={globalStyle} />
-      <Navbar blogLogoImage={gatsbyImageData} />
+    <Template
+      title={title}
+      description={description}
+      url={siteUrl}
+      image={publicURL}
+    >
+      <Navbar />
+
       <ResumeWrapper>
         <HeadLine>{headLineText}</HeadLine>
         <ResumeTemplate />
       </ResumeWrapper>
-    </div>
+    </Template>
   );
 };
 
 export default ResumePage;
 
-export const metadataQuery = graphql`
-  {
+export const getTemplate = graphql`
+  query getPostList {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+
     file(name: { eq: "logo" }) {
       childImageSharp {
-        gatsbyImageData(width: 143, height: 32)
+        gatsbyImageData(width: 32, height: 32)
       }
       publicURL
     }

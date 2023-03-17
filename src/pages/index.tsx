@@ -85,7 +85,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
       url={siteUrl}
       image={publicURL}
     >
-      <Navbar blogLogoImage={gatsbyImageData} />
+      <Navbar />
       {/* <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
