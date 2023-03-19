@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `dev.seop`,
     description: `devseop blog`,
-    author: `devseop`,
+    author: `younseop lee`,
     siteUrl: `https://devseop.github.io`,
   },
   plugins: [

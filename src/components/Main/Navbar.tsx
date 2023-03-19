@@ -1,19 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
-// import { IGatsbyImageData } from 'gatsby-plugin-image';
-// import BlogLogoImage from './BlogLogoImage';
 import { Link } from 'gatsby';
 
-// export type IntroductionProps = {
-//   // profileImage?: IGatsbyImageData;
-//   blogLogoImage: IGatsbyImageData;
-// };
-
-const Background = styled.header`
+const Background = styled.nav`
   width: 100%;
   position: fixed;
   z-index: 100;
   border-bottom: 0.5px solid rgba(34, 34, 34, 0.2);
+  background-color: #fff;
 `;
 
 const NavbarWrapper = styled.div`
@@ -23,23 +17,11 @@ const NavbarWrapper = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   padding: 16px 0;
-  background-color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
-
-// const Wrapper = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: center;
-//   width: 768px;
-//   margin: 16px auto;
-
-//   @media (max-width: 768px) {
-//     width: 100%;
-//     height: 300px;
-//     padding: 0 20px;
-//   }
-// `;
 
 const WordMark = styled.span`
   color: rgba(34, 34, 34, 1);
@@ -79,8 +61,8 @@ const Navbar = () => {
           <WordMark>dev.seop</WordMark>
         </Link>
         <MenuWrapper>
-          {/* <MenuLink to="/">Posts</MenuLink> */}
-          {/* <MenuLink to="/resume">Resume</MenuLink> */}
+          {/* <MenuLink to="/">Posts</MenuLink>
+          <MenuLink to="/about">About</MenuLink> */}
           <MenuLink to="https://github.com/devseop/" target="_blank">
             Github
           </MenuLink>

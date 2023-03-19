@@ -14,14 +14,14 @@ type PostListType = {
 const PostListWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  width: 768px;
+  gap: 16px;
+  width: 816px;
   margin: 120px auto 0;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     width: 100%;
-    padding: 50px 20px;
+    /* padding: 50px 20px; */
   }
 `;
 

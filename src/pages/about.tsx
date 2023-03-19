@@ -4,10 +4,10 @@ import styled from '@emotion/styled';
 import { Global, css } from '@emotion/react';
 import Navbar from 'components/Main/Navbar';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
-import ResumeTemplate from 'components/Resume/resume_template';
+import AboutTemplate from 'components/About/About_template';
 import Template from 'components/Common/Template';
 
-type ResumePageProps = {
+type AboutPageProps = {
   location: {
     search: string;
   };
@@ -28,7 +28,7 @@ type ResumePageProps = {
   };
 };
 
-const ResumeWrapper = styled.section`
+const AboutWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -49,7 +49,7 @@ const HeadLine = styled.h2`
   line-height: 1.3;
 `;
 
-const ResumePage: FunctionComponent<ResumePageProps> = ({
+const AboutPage: FunctionComponent<AboutPageProps> = ({
   location: { search },
   data: {
     site: {
@@ -73,15 +73,15 @@ const ResumePage: FunctionComponent<ResumePageProps> = ({
     >
       <Navbar />
 
-      <ResumeWrapper>
+      <AboutWrapper>
         <HeadLine>{headLineText}</HeadLine>
-        <ResumeTemplate />
-      </ResumeWrapper>
+        <AboutTemplate />
+      </AboutWrapper>
     </Template>
   );
 };
 
-export default ResumePage;
+export default AboutPage;
 
 export const getTemplate = graphql`
   query getPostList {
