@@ -1,9 +1,9 @@
 ---
 date: '2023-03-10'
 title: '옆에서 구경만 하는 조용한 친구: useRef'
-categories: ['React', 'Hook', 'useRef']
-summary: 'React의 Hook 중 하나인 useRef는 무엇이고 어떻게 사용해야 할까요?'
-thumbnail: './useref.png'
+# categories: ['React', 'Hook', 'useRef']
+# summary: 'React의 Hook 중 하나인 useRef는 무엇이고 어떻게 사용해야 할까요?'
+# thumbnail: './useref.png'
 ---
 
 전에 한 기업에서 기술 과제를 할 때 무한스크롤에 대한 기능을 구현하는 파트가 있었습니다. 당시에 저는 useState를 이용한 페이지네이션을 구현한 경험이 유일하여 해당 기능에 대한 이해가 부족했고 결국 과제는 통과하지 못 했었는데요. 해당 기능이 useRef를 이용하여 구현한다는 것을 뒤늦게 알았고 값의 참조을 위한 Hook이라고만 알고 어떻게 이용할 수 있는지에 대한 것은 몰랐었습니다. 그래서 이를 기회로 useRef의 개념과 여러 사용법에 대해 알아보았습니다.

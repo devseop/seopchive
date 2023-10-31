@@ -1,46 +1,61 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import PostHeadInfo, { PostHeadInfoProps } from './PostHeadInfo';
 
-type PostHeadProps = PostHeadInfoProps & {
-  thumbnail: {
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    };
-  };
+type PostHeadProps = {
+  title: string;
+  date: string;
+};
+
+const PostHead = ({ title, date }: PostHeadProps) => {
+  return (
+    <PostHeadWrapper>
+      <PostHeadInfoWrapper>
+        <Title>{title}</Title>
+        <PostDate>{date}</PostDate>
+      </PostHeadInfoWrapper>
+    </PostHeadWrapper>
+  );
 };
 
 const PostHeadWrapper = styled.header`
   display: flex;
   flex-direction: column;
+  margin-top: 160px;
 `;
 
-const BackgroundImage = styled(GatsbyImage)`
+const PostHeadInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 768px;
-  height: 350px;
-  object-fit: cover;
-  margin: 120px auto 12px;
-  border-radius: 16px;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
-    width: calc(100vw - 32px);
-    height: 220px;
+    width: 100%;
+    padding: 40px 20px;
   }
 `;
 
-const PostHead: FunctionComponent<PostHeadProps> = ({
-  title,
-  date,
-  categories,
-  thumbnail,
-}) => {
-  return (
-    <PostHeadWrapper>
-      <BackgroundImage image={thumbnail} alt="thumbnail" />
-      <PostHeadInfo title={title} date={date} categories={categories} />
-    </PostHeadWrapper>
-  );
-};
+const Title = styled.div`
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+`;
+
+const PostDate = styled.p`
+  font-size: 14px;
+  color: rgba(34, 34, 34, 0.6);
+`;
 
 export default PostHead;

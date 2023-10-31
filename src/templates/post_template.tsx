@@ -1,11 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-import { PostPageItemType } from '../types/PostItem.types';
+
 import Template from 'components/Common/Template';
+import Navbar from 'components/Main/Navbar';
 import PostHead from 'components/Post/PostHead';
 import PostContent from 'components/Post/PostContent';
 import CommentWidget from 'components/Post/CommentWidget';
-import Navbar from 'components/Main/Navbar';
+
+import { PostPageItemType } from '../types/PostItem.types';
 
 type PostTemplateProps = {
   data: {
@@ -18,42 +20,26 @@ type PostTemplateProps = {
   };
 };
 
-const PostTemplate: FunctionComponent<PostTemplateProps> = ({
+const PostTemplate = ({
   data: {
     allMarkdownRemark: { edges },
   },
   location: { href },
-}) => {
+}: PostTemplateProps) => {
   const {
     node: {
       html,
-      // tableOfContents,
-      frontmatter: {
-        title,
-        summary,
-        date,
-        categories,
-        thumbnail: {
-          childImageSharp: { gatsbyImageData },
-          publicURL,
-        },
-      },
+      frontmatter: { title, date },
     },
   } = edges[0];
 
-  // console.log(edges[0]);
+  console.log(edges[0]);
 
   return (
-    <Template title={title} description={summary} url={href} image={publicURL}>
+    <Template title={title} url={href}>
       <Navbar />
-      <PostHead
-        title={title}
-        date={date}
-        categories={categories}
-        thumbnail={gatsbyImageData}
-      />
+      <PostHead title={title} date={date} />
       <PostContent html={html} />
-      {/* <div dangerouslySetInnerHTML={{ __html: tableOfContents }} /> */}
       <CommentWidget />
     </Template>
   );
@@ -70,15 +56,7 @@ export const queryMarkdownDataBySlug = graphql`
           tableOfContents
           frontmatter {
             title
-            summary
             date(formatString: "YYYY.MM.DD.")
-            categories
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData
-              }
-              publicURL
-            }
           }
         }
       }

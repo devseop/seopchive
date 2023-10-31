@@ -1,9 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 interface PostContentProps {
   html: string;
 }
+
+const PostContent = ({ html }: PostContentProps) => {
+  //* React는 XSS 공격을 막기 위해 렌더링 메소드 내부에서 html 태그가 담겨있는 string 형태를 렌더링하면,
+  //* 태그가 적용되지 않고 문자열 그대로 렌더링 된다.
+  //* dangerouslySetInnerHTML은 이러한 취약점이 있다는 것을 알고 사용해야 한다.
+
+  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
+};
 
 const MarkdownRenderer = styled.article`
   // Renderer Style
@@ -193,13 +201,5 @@ const MarkdownRenderer = styled.article`
     }
   }
 `;
-
-const PostContent: FunctionComponent<PostContentProps> = ({ html }) => {
-  //* React는 XSS 공격을 막기 위해 렌더링 메소드 내부에서 html 태그가 담겨있는 string 형태를 렌더링하면,
-  //* 태그가 적용되지 않고 문자열 그대로 렌더링 된다.
-  //* dangerouslySetInnerHTML은 이러한 취약점이 있다는 것을 알고 사용해야 한다.
-
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
-};
 
 export default PostContent;

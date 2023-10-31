@@ -2,6 +2,23 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
+const Navbar = () => {
+  return (
+    <Background>
+      <NavbarWrapper>
+        <Link to="/">
+          <WordMark>dev.seop</WordMark>
+        </Link>
+        <MenuWrapper>
+          <MenuLink href="https://github.com/devseop/" target="_blank">
+            Github
+          </MenuLink>
+        </MenuWrapper>
+      </NavbarWrapper>
+    </Background>
+  );
+};
+
 const Background = styled.nav`
   width: 100%;
   position: fixed;
@@ -26,7 +43,7 @@ const NavbarWrapper = styled.div`
 const WordMark = styled.span`
   color: rgba(34, 34, 34, 1);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.5px;
   /* margin-left: 10px;
@@ -40,7 +57,7 @@ const MenuWrapper = styled.div`
   align-items: center;
 `;
 
-const MenuLink = styled(Link)`
+const MenuLink = styled.a`
   font-size: 16px;
   font-weight: 500;
   color: rgba(34, 34, 34, 0.8);
@@ -52,24 +69,5 @@ const MenuLink = styled(Link)`
     box-shadow: 0 1.5px 0 0 rgba(34, 34, 34, 0.8);
   }
 `;
-
-const Navbar = () => {
-  return (
-    <Background>
-      <NavbarWrapper>
-        <Link to="/">
-          <WordMark>dev.seop</WordMark>
-        </Link>
-        <MenuWrapper>
-          {/* <MenuLink to="/">Posts</MenuLink>
-          <MenuLink to="/about">About</MenuLink> */}
-          <MenuLink to="https://github.com/devseop/" target="_blank">
-            Github
-          </MenuLink>
-        </MenuWrapper>
-      </NavbarWrapper>
-    </Background>
-  );
-};
 
 export default Navbar;

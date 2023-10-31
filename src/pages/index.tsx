@@ -1,12 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
+import { graphql } from 'gatsby';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Navbar from 'components/Main/Navbar';
-// import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
 import PostList from 'components/Main/PostList';
 import Template from 'components/Common/Template';
-import { graphql } from 'gatsby';
 import { PostListItemType } from 'types/PostItem.types';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
-import queryString, { ParsedQuery } from 'query-string';
 
 type IndexPageProps = {
   location: {
@@ -32,65 +30,18 @@ type IndexPageProps = {
   };
 };
 
-const IndexPage: FunctionComponent<IndexPageProps> = ({
-  location: { search },
+const IndexPage = ({
   data: {
     site: {
-      siteMetadata: { title, description, siteUrl },
+      siteMetadata: { title, siteUrl },
     },
     allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
-    },
   },
-}) => {
-  const parsed: ParsedQuery<string> = queryString.parse(search);
-  const selectedCategory: string =
-    typeof parsed.category !== 'string' || !parsed.category
-      ? 'All'
-      : parsed.category;
-
-  // const categoryList = useMemo(
-  //   () =>
-  //     edges.reduce(
-  //       (
-  //         list: CategoryListProps['categoryList'],
-  //         {
-  //           node: {
-  //             frontmatter: { categories },
-  //           },
-  //         }: PostListItemType,
-  //       ) => {
-  //         categories.forEach((category) => {
-  //           if (list[category] === undefined) list[category] = 1;
-  //           else list[category]++;
-  //         });
-
-  //         list['All']++;
-
-  //         return list;
-  //       },
-  //       // initialValue
-  //       { All: 0 },
-  //     ),
-  //   // dependency
-  //   [],
-  // );
-
+}: IndexPageProps) => {
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
+    <Template title={title} url={siteUrl}>
       <Navbar />
-      {/* <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      /> */}
-      <PostList selectedCategory={selectedCategory} posts={edges} />
+      <PostList posts={edges} />
     </Template>
   );
 };
@@ -102,7 +53,6 @@ export const getPostList = graphql`
     site {
       siteMetadata {
         title
-        description
         siteUrl
       }
     }
@@ -117,14 +67,7 @@ export const getPostList = graphql`
           }
           frontmatter {
             title
-            summary
             date(formatString: "YYYY.MM.DD.")
-            categories
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 768, height: 400)
-              }
-            }
           }
         }
       }

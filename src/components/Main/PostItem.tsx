@@ -1,9 +1,25 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { PostFrontmatterType } from 'types/PostItem.types';
 
-type PostItemProps = PostFrontmatterType & { link: string };
+type PostItemProps = {
+  title: string;
+  date: string;
+  link: string;
+};
+
+export const PostItem = ({ title, date, link }: PostItemProps) => {
+  return (
+    <Link to={link}>
+      <PostItemWrapper>
+        <ContentItemHeader>
+          <Title>{title}</Title>
+        </ContentItemHeader>
+        <Date>{date.slice(0, -1)}</Date>
+      </PostItemWrapper>
+    </Link>
+  );
+};
 
 const PostItemWrapper = styled.article`
   // wrapper layout style
@@ -52,58 +68,3 @@ const Date = styled.h6`
   font-weight: 400;
   color: rgba(34, 34, 34, 0.4);
 `;
-
-const CategoryItem = styled.h6`
-  font-size: 14px;
-  font-weight: 400;
-  margin-right: 8px;
-  padding: 6px 12px;
-  border: 1px solid rgba(34, 34, 34, 0.8);
-  border-radius: 16px;
-
-  &:nth-of-type(1) {
-    color: #fff;
-    background-color: rgba(34, 34, 34, 1);
-  }
-`;
-
-const Summary = styled.h5`
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.4;
-  white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 16px;
-  font-weight: 400;
-  color: rgba(34, 34, 34, 0.7);
-`;
-
-const PostItem: FunctionComponent<PostItemProps> = ({
-  title,
-  date,
-  categories,
-  summary,
-  link,
-}) => {
-  return (
-    <Link to={link}>
-      <PostItemWrapper>
-        <ContentItemHeader>
-          <div style={{ display: 'flex' }}>
-            {categories.map((category) => (
-              <CategoryItem key={category}>{category}</CategoryItem>
-            ))}
-          </div>
-          <Title>{title}</Title>
-        </ContentItemHeader>
-        <Summary>{summary}</Summary>
-        <Date>{date.slice(0, -1)}</Date>
-      </PostItemWrapper>
-    </Link>
-  );
-};
-
-export default PostItem;

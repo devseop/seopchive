@@ -1,9 +1,6 @@
 ---
 date: '2023-03-01'
-title: 'Gatsby를 이용한 블로그 개발 후기'
-categories: ['Review', 'Gatsby', 'Github Pages']
-summary: 'Gatsby와 Github Pages를 이용하여 개발 블로그를 만든 후기입니다.'
-thumbnail: './blogPublish.png'
+title: 'Gatsby로 블로그 만들기'
 ---
 
 ## 개발 배경

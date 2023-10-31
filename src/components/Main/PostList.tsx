@@ -1,14 +1,30 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
-import PostItem from './PostItem';
+import { PostItem } from './PostItem';
 import { PostListItemType } from '../../types/PostItem.types';
-import useInfiniteScroll, {
-  useInfiniteScrollType,
-} from 'hooks/useInfiniteScroll';
 
 type PostListType = {
-  selectedCategory: string;
   posts: PostListItemType[];
+};
+
+const PostList = ({ posts }: PostListType) => {
+  console.log(posts);
+
+  return (
+    <PostListWrapper>
+      {posts.map(
+        ({
+          node: {
+            id,
+            fields: { slug },
+            frontmatter,
+          },
+        }: PostListItemType) => (
+          <PostItem {...frontmatter} key={id} link={slug} />
+        ),
+      )}
+    </PostListWrapper>
+  );
 };
 
 const PostListWrapper = styled.section`
@@ -24,31 +40,5 @@ const PostListWrapper = styled.section`
     /* padding: 50px 20px; */
   }
 `;
-
-const PostList: FunctionComponent<PostListType> = ({
-  selectedCategory,
-  posts,
-}) => {
-  const { containerRef, postList }: useInfiniteScrollType = useInfiniteScroll(
-    selectedCategory,
-    posts,
-  );
-
-  return (
-    <PostListWrapper ref={containerRef}>
-      {postList.map(
-        ({
-          node: {
-            id,
-            fields: { slug },
-            frontmatter,
-          },
-        }: PostListItemType) => (
-          <PostItem {...frontmatter} key={id} link={slug} />
-        ),
-      )}
-    </PostListWrapper>
-  );
-};
 
 export default PostList;

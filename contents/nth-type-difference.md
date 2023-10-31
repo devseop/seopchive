@@ -1,9 +1,6 @@
 ---
 date: '2022-08-16'
-title: 'nth-child? nth-of-type?'
-categories: ['Next.js', 'CSS']
-summary: 'Next.js 프로젝트의 CSS 스타일링 오류와 원인에 대해 알아봅니다.'
-thumbnail: './nth-of-type.png'
+title: 'nth-child와 nth-of-type의 차이'
 ---
 
 리스트 형태의 컴포넌트를 만들 때면 특정 순서의 컴포넌트 스타일만 변경해줘야 할 때가 있다. 그럴 때 `first-child`나 `nth-child`를 이용하여 특정 컴포넌트를 선택하여 공통된 스타일을 변경하거나 추가할 수 있다.
