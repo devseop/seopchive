@@ -19,3 +19,7 @@ export type PostPageItemType = {
     frontmatter: PostFrontmatterType;
   };
 };
+
+export type NavIconType = {
+  [key: string]: JSX.Element;
+};

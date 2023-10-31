@@ -17,10 +17,11 @@ const MarkdownRenderer = styled.article`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 768px;
+  width: 644px;
   margin: 0 auto;
   padding: 64px 0;
   word-break: break-all;
+  color: #e3e3e3;
 
   // Markdown Style
   line-height: 1.5;
@@ -170,7 +171,7 @@ const MarkdownRenderer = styled.article`
 
   // Markdown Responsive Design
   @media (max-width: 768px) {
-    width: 100%;
+    width: 644px;
     padding: 80px 20px;
     line-height: 1.6;
     font-size: 14px;

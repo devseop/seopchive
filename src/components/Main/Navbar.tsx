@@ -1,73 +1,119 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import { RiUser5Fill, RiGithubFill } from 'react-icons/ri';
+
+import { INTRODUCE_PARAGRAPH, NAV_CONSTANTS } from '../../constants/constants';
+import { NavIconType } from 'types/types';
 
 const Navbar = () => {
   return (
-    <Background>
-      <NavbarWrapper>
+    <NavContainer>
+      <Header>
         <Link to="/">
-          <WordMark>dev.seop</WordMark>
+          <img src="/logo.png" alt="로고" />
         </Link>
-        <MenuWrapper>
-          <MenuLink href="https://github.com/devseop/" target="_blank">
-            Github
+        <TextWrapper>
+          <h1>이윤섭</h1>
+          <p>{INTRODUCE_PARAGRAPH}</p>
+        </TextWrapper>
+      </Header>
+      <Nav>
+        {NAV_CONSTANTS.map((item, index) => (
+          <MenuLink key={index} href={item.link} target="_blank">
+            {item.icon && <IconWrapper>{NAV_ICONS[item.icon]}</IconWrapper>}
+            <MenuText>{item.text}</MenuText>
           </MenuLink>
-        </MenuWrapper>
-      </NavbarWrapper>
-    </Background>
+        ))}
+      </Nav>
+    </NavContainer>
   );
 };
 
-const Background = styled.nav`
-  width: 100%;
-  position: fixed;
-  z-index: 100;
-  border-bottom: 0.5px solid rgba(34, 34, 34, 0.2);
-  background-color: #fff;
+/** 문자로 제공된 아이콘을 컴포넌트로 변환 */
+const NAV_ICONS: NavIconType = {
+  RiUser5Fill: <RiUser5Fill />,
+  RiGithubFill: <RiGithubFill />,
+};
+
+const NavContainer = styled.aside`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 360px;
+  max-width: 360px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 `;
 
-const NavbarWrapper = styled.div`
-  max-width: 768px;
+const Header = styled.header`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 16px 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
 
-  @media (max-width: 768px) {
-    padding: 16px;
+  img {
+    width: 40px;
+    height: 40px;
   }
 `;
 
-const WordMark = styled.span`
-  color: rgba(34, 34, 34, 1);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.5px;
-  /* margin-left: 10px;
-  margin-top: -2px; */
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h1 {
+    color: rgba(254, 254, 254, 1);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -0.72px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    white-space: pre-line;
+  }
 `;
 
-const MenuWrapper = styled.div`
+const Nav = styled.nav`
   display: flex;
-  gap: 24px;
-  height: 32px;
-  align-items: center;
+  flex-direction: column;
+  padding: 40px;
 `;
 
 const MenuLink = styled.a`
-  font-size: 16px;
-  font-weight: 500;
-  color: rgba(34, 34, 34, 0.8);
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+
+  width: 280px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: rgba(254, 254, 254, 1);
   text-decoration: none;
   height: fit-content;
+  cursor: pointer;
 
-  :hover {
-    color: rgba(34, 34, 34, 0.8);
-    box-shadow: 0 1.5px 0 0 rgba(34, 34, 34, 0.8);
+  &:last-child {
+    color: rgba(254, 254, 254, 0.4);
+    border-bottom: none;
   }
+`;
+
+const IconWrapper = styled.div`
+  font-size: 20px;
+`;
+
+const MenuText = styled.span`
+  line-height: 1;
+  margin-top: 3px;
 `;
 
 export default Navbar;

@@ -1,13 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
 
-import Template from 'components/Common/Template';
-import Navbar from 'components/Main/Navbar';
-import PostHead from 'components/Post/PostHead';
-import PostContent from 'components/Post/PostContent';
-import CommentWidget from 'components/Post/CommentWidget';
+import Template from 'components/common/Template';
+import PostNav from 'components/content/PostNav';
+import PostHead from 'components/content/PostHead';
+import PostContent from 'components/content/PostContent';
+import CommentWidget from 'components/content/CommentWidget';
 
-import { PostPageItemType } from '../types/PostItem.types';
+import { PostPageItemType } from '../types/types';
 
 type PostTemplateProps = {
   data: {
@@ -33,19 +34,26 @@ const PostTemplate = ({
     },
   } = edges[0];
 
-  console.log(edges[0]);
+  console.log('post_template', edges);
 
   return (
     <Template title={title} url={href}>
-      <Navbar />
-      <PostHead title={title} date={date} />
-      <PostContent html={html} />
-      <CommentWidget />
+      <PostNav />
+      <Container>
+        <PostHead title={title} date={date} />
+        <PostContent html={html} />
+        <CommentWidget />
+      </Container>
     </Template>
   );
 };
 
-export default PostTemplate;
+const Container = styled.article`
+  min-width: 644px;
+  max-width: 644px;
+  padding: 80px 0;
+  margin-left: 14px;
+`;
 
 export const queryMarkdownDataBySlug = graphql`
   query queryMarkdownDataBySlug($slug: String) {
@@ -63,3 +71,5 @@ export const queryMarkdownDataBySlug = graphql`
     }
   }
 `;
+
+export default PostTemplate;

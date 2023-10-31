@@ -17,9 +17,12 @@ const defaultStyle = css`
     height: 100%;
   }
 
+  body {
+    background: #000;
+  }
+
   a,
   a:hover {
-    color: inherit;
     text-decoration: none;
     cursor: pointer;
   }

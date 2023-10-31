@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
-import Navbar from 'components/Main/Navbar';
-import PostList from 'components/Main/PostList';
-import Template from 'components/Common/Template';
-import { PostListItemType } from 'types/PostItem.types';
+import Navbar from 'components/main/Navbar';
+import PostList from 'components/main/PostList';
+import Template from 'components/common/Template';
+import { PostListItemType } from 'types/types';
 
 type IndexPageProps = {
   location: {
@@ -38,6 +38,8 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }: IndexPageProps) => {
+  console.log(getPostList);
+
   return (
     <Template title={title} url={siteUrl}>
       <Navbar />
@@ -45,8 +47,6 @@ const IndexPage = ({
     </Template>
   );
 };
-
-export default IndexPage;
 
 export const getPostList = graphql`
   query getPostList {
@@ -80,3 +80,5 @@ export const getPostList = graphql`
     }
   }
 `;
+
+export default IndexPage;

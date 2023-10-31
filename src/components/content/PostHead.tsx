@@ -8,34 +8,19 @@ type PostHeadProps = {
 
 const PostHead = ({ title, date }: PostHeadProps) => {
   return (
-    <PostHeadWrapper>
-      <PostHeadInfoWrapper>
-        <Title>{title}</Title>
-        <PostDate>{date}</PostDate>
-      </PostHeadInfoWrapper>
-    </PostHeadWrapper>
+    <Container>
+      <Title>{title}</Title>
+      <PostDate>{date}</PostDate>
+    </Container>
   );
 };
 
-const PostHeadWrapper = styled.header`
+const Container = styled.header`
   display: flex;
   flex-direction: column;
-  margin-top: 160px;
 `;
 
-const PostHeadInfoWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 768px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 40px 20px;
-  }
-`;
-
-const Title = styled.div`
+const Title = styled.h2`
   display: -webkit-box;
   overflow: hidden;
   overflow-wrap: break-word;
@@ -47,15 +32,12 @@ const Title = styled.div`
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 12px;
-
-  @media (max-width: 768px) {
-    font-size: 30px;
-  }
+  color: rgba(254, 254, 254, 1);
 `;
 
 const PostDate = styled.p`
   font-size: 14px;
-  color: rgba(34, 34, 34, 0.6);
+  color: rgba(254, 254, 254, 1);
 `;
 
 export default PostHead;

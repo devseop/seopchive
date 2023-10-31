@@ -12,9 +12,7 @@ export const PostItem = ({ title, date, link }: PostItemProps) => {
   return (
     <Link to={link}>
       <PostItemWrapper>
-        <ContentItemHeader>
-          <Title>{title}</Title>
-        </ContentItemHeader>
+        <Title>{title}</Title>
         <Date>{date.slice(0, -1)}</Date>
       </PostItemWrapper>
     </Link>
@@ -24,17 +22,9 @@ export const PostItem = ({ title, date, link }: PostItemProps) => {
 const PostItemWrapper = styled.article`
   // wrapper layout style
   display: flex;
-  cursor: pointer;
-  padding: 24px;
-  border-radius: 16px;
-
-  &:hover {
-    background-color: rgba(34, 34, 34, 0.05);
-  }
-
-  &:active {
-    background-color: rgba(34, 34, 34, 0.1);
-  }
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 24px;
 
   // content item layout style
   flex: 1;
@@ -42,15 +32,21 @@ const PostItemWrapper = styled.article`
   flex-direction: column;
   gap: 16px;
   margin: auto;
-`;
 
-const ContentItemHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  cursor: pointer;
+
+  &:hover {
+    h2 {
+      color: #2f7aea;
+    }
+  }
 `;
 
 const Title = styled.h2`
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -58,13 +54,10 @@ const Title = styled.h2`
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 28px;
-  font-weight: 700;
-  color: #222;
 `;
 
-const Date = styled.h6`
+const Date = styled.span`
+  color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
   font-weight: 400;
-  color: rgba(34, 34, 34, 0.4);
 `;
