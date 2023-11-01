@@ -33,6 +33,7 @@ const PostTemplate = ({
 }: PostTemplateProps) => {
   const {
     node: {
+      id,
       html,
       tableOfContents,
       frontmatter: { title, date },
@@ -40,6 +41,9 @@ const PostTemplate = ({
   } = edges[0];
 
   console.log('post_template', allPosts);
+
+  //TODO: 이전글/다음글 컴포넌트 추가
+  // 현재글의 id와 allPosts의 아이디를 비교 > allposts에서 해당 인덱스를 찾으면 > 그 인덱스를 기준으로 -1, +1의 인덱스를 저장해서 컴포넌트에 뿌리기
 
   return (
     <Template title={title} url={href}>
@@ -72,6 +76,7 @@ export const queryMarkdownDataBySlug = graphql`
     allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
+          id
           html
           tableOfContents
           frontmatter {
