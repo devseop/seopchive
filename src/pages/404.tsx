@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import GlobalStyle from '../style/GlobalStyle';
 
-export const NotFoundPage = function () {
+const NotFoundPage = function () {
   return (
     <NotFoundPageWrapper>
       <GlobalStyle />
@@ -53,3 +53,5 @@ const GoToMainButton = styled(Link)`
     text-decoration: underline;
   }
 `;
+
+export default NotFoundPage;
