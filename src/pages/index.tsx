@@ -38,8 +38,6 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }: IndexPageProps) => {
-  console.log(getPostList);
-
   return (
     <Template title={title} url={siteUrl}>
       <Intro />

@@ -22,7 +22,7 @@ const PostNav = ({ posts }: PostNavProps) => {
       <ContentWrapper>
         <Title>작성글</Title>
         <ListWrapper>
-          {posts.map(({ node }) => (
+          {posts?.map(({ node }) => (
             <PostLinkItem key={node.id}>
               <a href={node.fields.slug}>{node.frontmatter.title}</a>
             </PostLinkItem>
