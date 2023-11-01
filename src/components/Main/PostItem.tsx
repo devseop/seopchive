@@ -23,15 +23,8 @@ const PostItemWrapper = styled.article`
   // wrapper layout style
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 40px 24px;
-
-  // content item layout style
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: auto;
+  gap: 8px;
+  /* padding: 24px 0; */
 
   cursor: pointer;
 
@@ -43,9 +36,9 @@ const PostItemWrapper = styled.article`
 `;
 
 const Title = styled.h2`
-  color: #fff;
-  font-size: 28px;
-  font-weight: 600;
+  color: #222;
+  font-size: 24px;
+  font-weight: 400;
 
   display: -webkit-box;
   overflow: hidden;
@@ -57,7 +50,7 @@ const Title = styled.h2`
 `;
 
 const Date = styled.span`
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.4);
   font-size: 14px;
   font-weight: 400;
 `;

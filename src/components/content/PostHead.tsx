@@ -18,6 +18,9 @@ const PostHead = ({ title, date }: PostHeadProps) => {
 const Container = styled.header`
   display: flex;
   flex-direction: column;
+  min-width: 644px;
+  max-width: 644px;
+  margin: 0 auto;
 `;
 
 const Title = styled.h2`

@@ -16,6 +16,9 @@ type PostTemplateProps = {
       edges: PostPageItemType[];
     };
   };
+  pageContext: {
+    allPosts: any[];
+  };
   location: {
     href: string;
   };
@@ -25,6 +28,7 @@ const PostTemplate = ({
   data: {
     allMarkdownRemark: { edges },
   },
+  pageContext: { allPosts },
   location: { href },
 }: PostTemplateProps) => {
   const {
@@ -34,11 +38,11 @@ const PostTemplate = ({
     },
   } = edges[0];
 
-  console.log('post_template', edges);
+  console.log('post_template', allPosts);
 
   return (
     <Template title={title} url={href}>
-      <PostNav />
+      <PostNav posts={allPosts} />
       <Container>
         <PostHead title={title} date={date} />
         <PostContent html={html} />
@@ -49,8 +53,8 @@ const PostTemplate = ({
 };
 
 const Container = styled.article`
-  min-width: 644px;
-  max-width: 644px;
+  min-width: 1440px;
+  max-width: 1440px;
   padding: 80px 0;
   margin-left: 14px;
 `;

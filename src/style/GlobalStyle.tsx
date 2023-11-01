@@ -14,11 +14,11 @@ const defaultStyle = css`
   html,
   body,
   #___gatsby {
-    height: 100%;
+    /* height: 100%; */
   }
 
   body {
-    background: #000;
+    background: #fffef5;
   }
 
   a,

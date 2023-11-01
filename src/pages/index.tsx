@@ -4,6 +4,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 import Navbar from 'components/main/Navbar';
 import PostList from 'components/main/PostList';
 import Template from 'components/common/Template';
+import Intro from '../components/main/Intro';
 import { PostListItemType } from 'types/types';
 
 type IndexPageProps = {
@@ -43,6 +44,7 @@ const IndexPage = ({
   return (
     <Template title={title} url={siteUrl}>
       <Navbar />
+      <Intro />
       <PostList posts={edges} />
     </Template>
   );

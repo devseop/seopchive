@@ -42,10 +42,6 @@ const Template = ({ title, url, children }: TemplateProps) => {
   );
 };
 
-const Container = styled.main`
-  display: grid;
-  grid-template-columns: 0fr 1fr;
-  gap: 24px;
-`;
+const Container = styled.main``;
 
 export default Template;
