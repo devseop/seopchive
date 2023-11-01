@@ -2,16 +2,54 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 interface PostContentProps {
+  title: string;
+  date: string;
   html: string;
 }
 
-const PostContent = ({ html }: PostContentProps) => {
+const Content = ({ title, date, html }: PostContentProps) => {
   //* React는 XSS 공격을 막기 위해 렌더링 메소드 내부에서 html 태그가 담겨있는 string 형태를 렌더링하면,
   //* 태그가 적용되지 않고 문자열 그대로 렌더링 된다.
   //* dangerouslySetInnerHTML은 이러한 취약점이 있다는 것을 알고 사용해야 한다.
 
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <>
+      <Container>
+        <Title>{title}</Title>
+        <PostDate>{date}</PostDate>
+      </Container>
+      <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
+    </>
+  );
 };
+
+const Container = styled.header`
+  display: flex;
+  flex-direction: column;
+  min-width: 644px;
+  max-width: 644px;
+  margin: 0 auto;
+`;
+
+const Title = styled.h2`
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #222;
+`;
+
+const PostDate = styled.p`
+  font-size: 14px;
+  color: #222;
+`;
 
 const MarkdownRenderer = styled.article`
   // Renderer Style
@@ -21,7 +59,7 @@ const MarkdownRenderer = styled.article`
   margin: 0 auto;
   padding: 64px 0;
   word-break: break-all;
-  color: #e3e3e3;
+  color: #222;
 
   // Markdown Style
   line-height: 1.5;
@@ -203,4 +241,4 @@ const MarkdownRenderer = styled.article`
   }
 `;
 
-export default PostContent;
+export default Content;

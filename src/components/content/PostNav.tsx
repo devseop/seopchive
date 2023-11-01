@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
 type PostNavProps = {
@@ -18,13 +19,8 @@ type PostNavProps = {
 const PostNav = ({ posts }: PostNavProps) => {
   return (
     <NavContainer>
-      <Header>
-        <TextWrapper>
-          <h1>글</h1>
-          <h1>{posts.length}</h1>
-        </TextWrapper>
-      </Header>
       <ContentWrapper>
+        <Title>작성글</Title>
         <ListWrapper>
           {posts.map(({ node }) => (
             <PostLinkItem key={node.id}>
@@ -38,50 +34,30 @@ const PostNav = ({ posts }: PostNavProps) => {
 };
 
 const NavContainer = styled.aside`
-  display: flex;
-  flex-direction: column;
-  min-width: 360px;
-  max-width: 360px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  color: white;
-`;
-
-const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 40px 40px 0 40px;
-
-  img {
-    width: 40px;
-    height: 40px;
-  }
+  width: 360px;
 `;
 
 const ContentWrapper = styled.nav`
-  padding: 24px 40px 0 28px;
+  padding: 16px 40px 0 0;
   opacity: 0.3;
   transition: opacity 0.2s ease-in-out;
+  overflow-y: auto;
+  position: sticky;
+  top: 94px;
+  max-height: calc(100vh - 54px - 40px);
 
   &:hover {
     opacity: 1;
   }
 `;
 
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-
-  h1 {
-    color: #222;
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 36px;
-    letter-spacing: -0.72px;
-  }
+const Title = styled.h1`
+  margin: 0 0 16px 12px;
+  color: #222;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.72px;
 `;
 
 const ListWrapper = styled.ul`
@@ -100,16 +76,16 @@ const PostLinkItem = styled.li`
 
   &:hover {
     filter: none;
-    background-color: rgba(254, 254, 254, 0.1);
+    background-color: rgba(0, 0, 0, 0.07);
   }
 
   a {
-    color: rgba(254, 254, 254, 1);
+    color: #222;
     text-decoration: none;
     line-height: 1.4;
 
     &:visited {
-      color: rgba(254, 254, 254, 1);
+      color: #222;
       text-decoration: none;
     }
   }

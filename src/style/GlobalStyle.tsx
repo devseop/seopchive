@@ -18,7 +18,8 @@ const defaultStyle = css`
   }
 
   body {
-    background: #fffef5;
+    /* background: #fffef5; */
+    background: #fff;
   }
 
   a,

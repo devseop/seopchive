@@ -2,13 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-type PostItemProps = {
+type ItemProps = {
   title: string;
   date: string;
   link: string;
 };
 
-export const PostItem = ({ title, date, link }: PostItemProps) => {
+export const Item = ({ title, date, link }: ItemProps) => {
   return (
     <Link to={link}>
       <PostItemWrapper>

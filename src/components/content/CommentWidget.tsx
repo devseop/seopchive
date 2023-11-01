@@ -43,9 +43,8 @@ const CommentWidget = () => {
 };
 
 const UtterancesWrapper = styled.div`
-  @media (max-width: 768px) {
-    padding: 0 20px;
-  }
+  width: 644px;
+  margin: 0 auto;
 `;
 
 export default CommentWidget;

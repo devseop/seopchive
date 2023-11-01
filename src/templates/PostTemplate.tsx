@@ -4,11 +4,11 @@ import styled from '@emotion/styled';
 
 import Template from 'components/common/Template';
 import PostNav from 'components/content/PostNav';
-import PostHead from 'components/content/PostHead';
-import PostContent from 'components/content/PostContent';
+import Content from 'components/content/Content';
 import CommentWidget from 'components/content/CommentWidget';
 
 import { PostPageItemType } from '../types/types';
+import TableOfContents from 'components/content/TableOfContents';
 
 type PostTemplateProps = {
   data: {
@@ -34,6 +34,7 @@ const PostTemplate = ({
   const {
     node: {
       html,
+      tableOfContents,
       frontmatter: { title, date },
     },
   } = edges[0];
@@ -42,21 +43,28 @@ const PostTemplate = ({
 
   return (
     <Template title={title} url={href}>
-      <PostNav posts={allPosts} />
       <Container>
-        <PostHead title={title} date={date} />
-        <PostContent html={html} />
-        <CommentWidget />
+        <PostNav posts={allPosts} />
+        <ContentWrapper>
+          <Content title={title} date={date} html={html} />
+          <CommentWidget />
+        </ContentWrapper>
+        <TableOfContents content={tableOfContents} />
       </Container>
     </Template>
   );
 };
 
-const Container = styled.article`
-  min-width: 1440px;
+const Container = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 40px auto;
   max-width: 1440px;
-  padding: 80px 0;
-  margin-left: 14px;
+`;
+
+const ContentWrapper = styled.main`
+  max-width: 644px;
 `;
 
 export const queryMarkdownDataBySlug = graphql`

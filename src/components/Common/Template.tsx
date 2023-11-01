@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
-import styled from '@emotion/styled';
 
 import GlobalStyle from '../../style/GlobalStyle';
+import Navbar from 'components/main/Navbar';
 
 type TemplateProps = {
   title: string;
@@ -12,7 +12,7 @@ type TemplateProps = {
 
 const Template = ({ title, url, children }: TemplateProps) => {
   return (
-    <Container>
+    <>
       <Helmet>
         <title>{title}</title>
 
@@ -36,12 +36,11 @@ const Template = ({ title, url, children }: TemplateProps) => {
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />
+      <Navbar />
       {children}
       {/* <Footer /> */}
-    </Container>
+    </>
   );
 };
-
-const Container = styled.main``;
 
 export default Template;

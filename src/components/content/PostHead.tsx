@@ -35,12 +35,12 @@ const Title = styled.h2`
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 12px;
-  color: rgba(254, 254, 254, 1);
+  color: #222;
 `;
 
 const PostDate = styled.p`
   font-size: 14px;
-  color: rgba(254, 254, 254, 1);
+  color: #222;
 `;
 
 export default PostHead;

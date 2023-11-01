@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { PostItem } from './PostItem';
+import { Item } from './Item';
 import { PostListItemType } from '../../types/types';
 
-type PostListType = {
+type ListType = {
   posts: PostListItemType[];
 };
 
-const PostList = ({ posts }: PostListType) => {
+const List = ({ posts }: ListType) => {
   return (
     <Container>
-      <Title>📄 POSTS</Title>
+      <Title>\ 작성글</Title>
       <PostListWrapper>
         {posts.map(
           ({
@@ -20,7 +20,7 @@ const PostList = ({ posts }: PostListType) => {
               frontmatter,
             },
           }: PostListItemType) => (
-            <PostItem {...frontmatter} key={id} link={slug} />
+            <Item {...frontmatter} key={id} link={slug} />
           ),
         )}
       </PostListWrapper>
@@ -44,9 +44,9 @@ const PostListWrapper = styled.ul`
 const Title = styled.p`
   color: #222;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 24px; /* 100% */
   letter-spacing: -0.96px;
 `;
 
-export default PostList;
+export default List;

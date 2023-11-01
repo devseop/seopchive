@@ -4,14 +4,14 @@ import { INTRODUCE_PARAGRAPH } from '../../constants/constants';
 const Intro = () => {
   return (
     <Container>
-      <IntroText>{INTRODUCE_PARAGRAPH}</IntroText>
+      <IntroText>\ {INTRODUCE_PARAGRAPH}</IntroText>
     </Container>
   );
 };
 
 const Container = styled.section`
   max-width: 1024px;
-  margin: 144px auto 80px;
+  margin: 80px auto;
 `;
 
 const IntroText = styled.p`

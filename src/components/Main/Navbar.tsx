@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { RiUser5Fill, RiGithubFill } from 'react-icons/ri';
 
-import { HOME_TYPE, NAV_CONSTANTS } from '../../constants/constants';
+import { NAV_CONSTANTS } from '../../constants/constants';
 import { NavIconType } from 'types/types';
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
     <NavContainer>
       <Header>
         <Link to="/">
-          <h1>{HOME_TYPE}</h1>
+          <h1>이윤섭</h1>
         </Link>
       </Header>
       <Nav>
@@ -32,18 +32,19 @@ const NAV_ICONS: NavIconType = {
   RiGithubFill: <RiGithubFill />,
 };
 
-const NavContainer = styled.header`
+const NavContainer = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 40px;
-  background-color: #fffef5;
+  padding: 12px 40px;
+  /* background-color: #fffef5; */
+  background-color: #fff;
   box-shadow: 0px 1px 0px 0px rgba(34, 34, 34, 0.2);
-
-  position: fixed;
+  position: sticky;
   top: 0;
+  z-index: 1;
 `;
 
 const Header = styled.div`
@@ -51,6 +52,7 @@ const Header = styled.div`
   height: fit-content;
 
   h1 {
+    font-size: 24px;
     font-weight: 500;
   }
 
@@ -63,7 +65,7 @@ const Header = styled.div`
   }
 `;
 
-const Nav = styled.nav`
+const Nav = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -74,8 +76,8 @@ const MenuLink = styled.a`
   flex-direction: row;
   gap: 4px;
 
-  padding: 4px 16px;
-
+  padding: 0 16px;
+  margin-top: 5px;
   color: #222;
   text-decoration: none;
   height: fit-content;
