@@ -39,9 +39,10 @@ const NavContainer = styled.nav`
   align-items: center;
   width: 100%;
   padding: 12px 40px;
-  /* background-color: #fffef5; */
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0px 1px 0px 0px rgba(34, 34, 34, 0.2);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1;
