@@ -52,8 +52,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ) {
           edges {
             node {
+              id
               fields {
                 slug
+              }
+              frontmatter {
+                title
+                date
               }
             }
           }
@@ -83,7 +88,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const pageOptions = {
       path: slug,
       component: PostTemplateComponent,
-      context: { slug },
+      context: {
+        slug,
+        allPosts: queryAllMarkdownData.data.allMarkdownRemark.edges, // 전체 포스트 데이터를 context에 추가합니다.
+      },
     };
     createPage(pageOptions);
   };
