@@ -1,9 +1,6 @@
 ---
 date: '2022-07-06'
-title: 'Next.js 프로젝트를 AWS S3로 배포하기 (with Docker)'
-categories: ['Review', 'AWS', 'Docker', 'Next.js']
-summary: '기업협업시 담당했던 프론트 서버 배포 과정에 대한 경험과 실패에 대한 회고입니다.'
-thumbnail: './deploy.png'
+title: 'Next.js 프로젝트 배포하기 (Docker, AWS S3)'
 ---
 
 ## Next.js Is

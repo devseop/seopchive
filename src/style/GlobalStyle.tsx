@@ -14,12 +14,16 @@ const defaultStyle = css`
   html,
   body,
   #___gatsby {
-    height: 100%;
+    /* height: 100%; */
+  }
+
+  body {
+    /* background: #fffef5; */
+    background: #fff;
   }
 
   a,
   a:hover {
-    color: inherit;
     text-decoration: none;
     cursor: pointer;
   }

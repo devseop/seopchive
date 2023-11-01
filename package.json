@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-for-devseop",
   "private": true,
-  "description": "Younseop lee's develope blog with Gatsby",
+  "description": "younseop lee's develope blog with Gatsby",
   "version": "0.2.0",
-  "author": "Younseop Lee <whasseop@gmail.com>",
+  "author": "younseop Lee <cocc263@gmail.com>",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -39,6 +39,7 @@
     "query-string": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "typescript": "^4.9.5"
   },
   "devDependencies": {

@@ -1,75 +1,101 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import { RiUser5Fill, RiGithubFill } from 'react-icons/ri';
 
-const Background = styled.nav`
-  width: 100%;
-  position: fixed;
-  z-index: 100;
-  border-bottom: 0.5px solid rgba(34, 34, 34, 0.2);
-  background-color: #fff;
-`;
-
-const NavbarWrapper = styled.div`
-  max-width: 768px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 16px 0;
-
-  @media (max-width: 768px) {
-    padding: 16px;
-  }
-`;
-
-const WordMark = styled.span`
-  color: rgba(34, 34, 34, 1);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.5px;
-  /* margin-left: 10px;
-  margin-top: -2px; */
-`;
-
-const MenuWrapper = styled.div`
-  display: flex;
-  gap: 24px;
-  height: 32px;
-  align-items: center;
-`;
-
-const MenuLink = styled(Link)`
-  font-size: 16px;
-  font-weight: 500;
-  color: rgba(34, 34, 34, 0.8);
-  text-decoration: none;
-  height: fit-content;
-
-  :hover {
-    color: rgba(34, 34, 34, 0.8);
-    box-shadow: 0 1.5px 0 0 rgba(34, 34, 34, 0.8);
-  }
-`;
+import { NAV_CONSTANTS } from '../../constants/constants';
+import { NavIconType } from 'types/types';
 
 const Navbar = () => {
   return (
-    <Background>
-      <NavbarWrapper>
+    <NavContainer>
+      <Header>
         <Link to="/">
-          <WordMark>dev.seop</WordMark>
+          <h1>이윤섭</h1>
         </Link>
-        <MenuWrapper>
-          {/* <MenuLink to="/">Posts</MenuLink>
-          <MenuLink to="/about">About</MenuLink> */}
-          <MenuLink to="https://github.com/devseop/" target="_blank">
-            Github
+      </Header>
+      <Nav>
+        {NAV_CONSTANTS.map((item, index) => (
+          <MenuLink key={index} href={item.link} target="_blank">
+            {item.icon && <IconWrapper>{NAV_ICONS[item.icon]}</IconWrapper>}
+            <MenuText>{item.text}</MenuText>
           </MenuLink>
-        </MenuWrapper>
-      </NavbarWrapper>
-    </Background>
+        ))}
+      </Nav>
+    </NavContainer>
   );
 };
+
+/** 문자로 제공된 아이콘을 컴포넌트로 변환 */
+const NAV_ICONS: NavIconType = {
+  RiUser5Fill: <RiUser5Fill />,
+  RiGithubFill: <RiGithubFill />,
+};
+
+const NavContainer = styled.nav`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 40px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 1px 0px 0px rgba(34, 34, 34, 0.2);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+`;
+
+const Header = styled.div`
+  line-height: 1;
+  height: fit-content;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: #222;
+    }
+  }
+`;
+
+const Nav = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+`;
+
+const MenuLink = styled.a`
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+
+  padding: 0 16px;
+  margin-top: 5px;
+  color: #222;
+  text-decoration: none;
+  height: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    color: #3680ff;
+  }
+`;
+
+const IconWrapper = styled.div`
+  font-size: 20px;
+`;
+
+const MenuText = styled.span`
+  line-height: 1;
+  margin-top: 3px;
+`;
 
 export default Navbar;

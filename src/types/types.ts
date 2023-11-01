@@ -1,16 +1,6 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image';
-
 export type PostFrontmatterType = {
   title: string;
   date: string;
-  categories: string[];
-  summary: string;
-  thumbnail: {
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    };
-    publicURL: string;
-  };
 };
 
 export type PostListItemType = {
@@ -25,8 +15,13 @@ export type PostListItemType = {
 
 export type PostPageItemType = {
   node: {
+    id: string;
     html: string;
-    // tableOfContents: string;
+    tableOfContents: string;
     frontmatter: PostFrontmatterType;
   };
+};
+
+export type NavIconType = {
+  [key: string]: JSX.Element;
 };

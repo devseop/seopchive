@@ -1,9 +1,9 @@
 ---
 date: '2022-09-01'
 title: '테오의 스프린트 11기 후기'
-categories: ['Review', 'Side-Project', 'Sprint']
-summary: '테오의 스프린트는 시니어 프론트엔드 개발자 테오(teo)가 진행하는 프로젝트로 참여자끼리 팀을 구성하여 구글의 스프린트를 체험해보는 과정에 대한 회고입니다.'
-thumbnail: './sprint.png'
+# categories: ['Review', 'Side-Project', 'Sprint']
+# summary: '테오의 스프린트는 시니어 프론트엔드 개발자 테오(teo)가 진행하는 프로젝트로 참여자끼리 팀을 구성하여 구글의 스프린트를 체험해보는 과정에 대한 회고입니다.'
+# thumbnail: './sprint.png'
 ---
 
 # Day 1 (수요일)

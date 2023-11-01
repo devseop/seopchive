@@ -1,9 +1,6 @@
 ---
 date: '2023-03-07'
-title: 'JavaScript에서 이벤트 제어하기: Debouncing & Throttling'
-categories: ['JavaScript', 'Event']
-summary: '이벤트 제어를 위한 최적화 방법, Debouncing과 Throttling에 대해 알아봤습니다.'
-thumbnail: './debounce.png'
+title: '자바스크립에서 이벤트 제어하기: Debouncing & Throttling'
 ---
 
 프로젝트를 하다보면 모든 API 요청을 마구잡이로 보내서 과해지는 경우가 있습니다.
