@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 
 type PostNavProps = {
@@ -23,9 +24,11 @@ const PostNav = ({ posts }: PostNavProps) => {
         <Title>작성글</Title>
         <ListWrapper>
           {posts?.map(({ node }) => (
-            <PostLinkItem key={node.id}>
-              <a href={node.fields.slug}>{node.frontmatter.title}</a>
-            </PostLinkItem>
+            <PostLink to={node.fields.slug}>
+              <PostLinkItem key={node.id}>
+                {node.frontmatter.title}
+              </PostLinkItem>
+            </PostLink>
           ))}
         </ListWrapper>
       </ContentWrapper>
@@ -78,16 +81,17 @@ const PostLinkItem = styled.li`
     filter: none;
     background-color: rgba(0, 0, 0, 0.07);
   }
+`;
 
-  a {
+const PostLink = styled(Link)`
+  color: #222;
+  text-decoration: none;
+  line-height: 1.4;
+  width: 320px;
+
+  &:visited {
     color: #222;
     text-decoration: none;
-    line-height: 1.4;
-
-    &:visited {
-      color: #222;
-      text-decoration: none;
-    }
   }
 `;
 

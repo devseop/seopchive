@@ -206,39 +206,6 @@ const MarkdownRenderer = styled.article`
       color: #fff;
     }
   }
-
-  // Markdown Responsive Design
-  @media (max-width: 768px) {
-    width: 644px;
-    padding: 80px 20px;
-    line-height: 1.6;
-    font-size: 14px;
-
-    h1 {
-      font-size: 23px;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-
-    h3 {
-      font-size: 17px;
-    }
-
-    h4 {
-      font-size: 17px;
-      font-weight: 500;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    hr {
-      margin: 50px 0;
-    }
-  }
 `;
 
 export default Content;
