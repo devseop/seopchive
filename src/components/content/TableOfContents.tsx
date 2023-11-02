@@ -1,9 +1,20 @@
 import styled from '@emotion/styled';
 
 const TableOfContents = ({ content }: { content: string }) => {
+  // const clickRemoveUrlStringHandler = (
+  //   e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  // ) => {
+  //   if (e.target && (e.target as HTMLElement).tagName === 'A') {
+  //     e.preventDefault();
+  //   }
+  // };
+
   return (
     <Container>
-      <StyledToc dangerouslySetInnerHTML={{ __html: content }} />
+      <StyledToc
+        dangerouslySetInnerHTML={{ __html: content }}
+        // onClick={clickRemoveUrlStringHandler}
+      />
     </Container>
   );
 };

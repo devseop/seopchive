@@ -1,6 +1,6 @@
 ---
 date: '2023-03-10'
-title: '옆에서 구경만 하는 조용한 친구: useRef'
+title: '조용한 관찰자 useRef()'
 # categories: ['React', 'Hook', 'useRef']
 # summary: 'React의 Hook 중 하나인 useRef는 무엇이고 어떻게 사용해야 할까요?'
 # thumbnail: './useref.png'
