@@ -61,6 +61,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 date
               }
             }
+            next {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+            previous {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
           }
         }
       }
