@@ -24,10 +24,8 @@ const PostNav = ({ posts }: PostNavProps) => {
         <Title>작성글</Title>
         <ListWrapper>
           {posts?.map(({ node }) => (
-            <PostLink to={node.fields.slug}>
-              <PostLinkItem key={node.id}>
-                {node.frontmatter.title}
-              </PostLinkItem>
+            <PostLink to={node.fields.slug} key={node.id}>
+              <PostLinkItem>{node.frontmatter.title}</PostLinkItem>
             </PostLink>
           ))}
         </ListWrapper>

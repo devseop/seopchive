@@ -25,3 +25,26 @@ export type PostPageItemType = {
 export type NavIconType = {
   [key: string]: JSX.Element;
 };
+
+export type PostTemplateProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: PostPageItemType[];
+    };
+  };
+  pageContext: {
+    allPosts: [];
+  };
+  location: {
+    href: string;
+  };
+};
+
+export type PostNavigationType = {
+  frontmatter: {
+    title: string;
+  };
+  fields: {
+    slug: string;
+  };
+};

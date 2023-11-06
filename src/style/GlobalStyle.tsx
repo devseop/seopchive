@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Global, css } from '@emotion/react';
 
 const defaultStyle = css`
@@ -14,11 +14,9 @@ const defaultStyle = css`
   html,
   body,
   #___gatsby {
-    /* height: 100%; */
   }
 
   body {
-    /* background: #fffef5; */
     background: #fff;
   }
 
@@ -29,7 +27,7 @@ const defaultStyle = css`
   }
 `;
 
-const GlobalStyle: FunctionComponent = () => {
+const GlobalStyle = () => {
   return <Global styles={defaultStyle} />;
 };
 

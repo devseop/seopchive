@@ -13,7 +13,7 @@ export const Item = ({ title, date, link }: ItemProps) => {
     <Link to={link}>
       <PostItemWrapper>
         <Title>{title}</Title>
-        <Date>{date.slice(0, -1)}</Date>
+        <Date>{date}</Date>
       </PostItemWrapper>
     </Link>
   );

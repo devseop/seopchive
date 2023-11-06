@@ -64,7 +64,7 @@ const MarkdownRenderer = styled.article`
   // Markdown Style
   line-height: 1.5;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 300;
 
   // Apply Padding Attribute to All Elements
   p {
