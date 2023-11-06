@@ -10,7 +10,7 @@ title: '테오의 스프린트 11기 후기'
 
 ## 아이디어 발표 및 팀 매칭
 
-![스프린트 이미지1](images/sprint1.png)
+![스프린트 이미지1](images/sprint/sprint1.png)
 </br>
 
 </br>
@@ -20,7 +20,7 @@ title: '테오의 스프린트 11기 후기'
 
 **나는 이런 사람이고, 우리 팀에선 이런 걸 원합니다!**
 
-![스프린트 이미지2](images/sprint2.png)
+![스프린트 이미지2](images/sprint/sprint2.png)
 </br>
 
 </br>
@@ -48,7 +48,7 @@ title: '테오의 스프린트 11기 후기'
 >
 > 우리가 어릴 적 사용하던 영단어 카드집에서 모티브를 얻은 만큼 이용이 간단해야 하고 서비스의 이용이 곧이어 사용자의 습관으로 형성되길 바랬습니다.
 
-![스프린트 이미지3](images/sprint3.png)
+![스프린트 이미지3](images/sprint/sprint3.png)
 </br>
 
 </br>
@@ -58,7 +58,7 @@ title: '테오의 스프린트 11기 후기'
 
 ## UI 스케치
 
-![스프린트 이미지4](images/sprint4.png)
+![스프린트 이미지4](images/sprint/sprint4.png)
 </br>
 
 </br>
@@ -66,7 +66,7 @@ title: '테오의 스프린트 11기 후기'
 
 ## 기능 정리, 개발 준비
 
-![스프린트 이미지5](images/sprint5.png)
+![스프린트 이미지5](images/sprint/sprint5.png)
 </br>
 
 </br>
@@ -76,7 +76,7 @@ title: '테오의 스프린트 11기 후기'
 
 ## Hello, Figma!
 
-![스프린트 이미지6](images/sprint6.png)
+![스프린트 이미지6](images/sprint/sprint6.png)
 </br>
 
 </br>
@@ -84,7 +84,7 @@ UX 책임자를 맡게된 저는 모이기로 약속한 시간이 되기 전에 
 
 ## 페어 프로그래밍
 
-![스프린트 이미지7](images/sprint7.png)
+![스프린트 이미지7](images/sprint/sprint7.png)
 </br>
 
 </br>
@@ -124,6 +124,6 @@ UX 책임자를 맡게된 저는 모이기로 약속한 시간이 되기 전에 
 
 </br>
 
-![스프린트 이미지8](images/sprint8.png)
+![스프린트 이미지8](images/sprint/sprint8.png)
 
 > [Github Link](https://github.com/code-flash-card/code-flash-card)
