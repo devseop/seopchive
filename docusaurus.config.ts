@@ -7,7 +7,7 @@ const config: Config = {
   title: 'seopchive',
   tagline: '동적인 것을 좋아하는 정적인 개발자',
   favicon: 'img/favicon.svg',
-  url: 'https://devseop.github.io/',
+  url: 'https://seopchive.vercel.app',
   baseUrl: '/',
   trailingSlash: false,
   projectName: 'seopchive',
