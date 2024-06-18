@@ -7,7 +7,7 @@ const blog = {
   blogSidebarTitle: '목록',
   showReadingTime: false,
   archiveBasePath: 'archive',
-  editUrl: 'https://github.com/devseop/seopchive.git/blog',
+  editUrl: 'https://github.com/devseop/seopchive/blog',
 };
 
 export default blog;
